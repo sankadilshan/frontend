@@ -1,0 +1,31 @@
+ 
+<app-navbar></app-navbar> 
+<div class="col-md-6" id="div1">
+  <h2> Users list</h2>
+  
+  <table id="table">
+    <thead>
+    <tr>
+      <th ></th>
+      <th>username</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of users; index as i" style="margin-bottom: 5px;">
+      <td >{{i+1}}. </td>
+      <td>{{user.username}}</td>
+     <!-- <td>{{user.firstname}}</td>
+      <td>{{user.lastname}}</td>-->
+      <td class="hidden">{{user.password}}</td>
+     
+      <td style="width: 25px "><button class="btn btn-danger"  (click)="deleteUser(user)"> Delete User</button></td>
+      <td><button class="btn btn-danger"  (click)="updateUser(user)"> Update User</button></td>
+   
+    </tr>
+    </tbody>
+  </table>
+
+ 
+  
+  </div>
+  

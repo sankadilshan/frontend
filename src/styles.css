@@ -1,0 +1,196 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+ background-image:  url(/src/assets/image/back.jpg);
+  background-color: rgba(156, 150, 150, 0.09);
+  background-size: 1366px 637px;
+  resize: both;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; 
+}
+  
+nav a:visited, a:link{
+    color: #607D8B;
+}
+nav a:hover{
+    color:#039be5;
+    background-color: #CFD8DC;
+}
+nav a.active{
+    color:#039be5
+}
+nav a{
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 4px
+    
+}
+.z-depth-5 {
+    box-shadow: 0 16px 24px 8px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.3);
+      
+}
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link{
+    background-color: #0090ff52;
+}
+
+.form-control{
+    border: none;
+    border-radius: 5px;
+   
+}
+/*input field*/
+.input{
+width:1105px;
+height:27px;
+background-color: transparent; 
+position: absolute;
+left:211px; 
+outline: none;
+border-radius: 3px;
+padding-left: 10px;
+z-index:8;
+box-shadow:inset 0px 0px 8px 3px rgba(95, 88,88, 0.09);
+border:1px solid #2db15e96
+ 
+}
+
+#head{
+    background-color: rgba(210, 204,204, 1);
+    width:102%;
+    height:25px;
+    position: fixed;
+    top:107px;
+    margin-left: -30px;
+    z-index: 10;
+}
+#bhead{
+    width:102%;
+     text-align: -webkit-left;
+     padding-left:-10px;
+     
+}
+.input2{
+  background-color: transparent;
+  border-radius: 3px;
+  outline:none;
+  position: absolute;
+  left:211px;
+  width:520px;
+  height: 27px;
+  padding-left: 10px;
+  z-index:8;
+  outline: none;
+  box-shadow:inset 0px 0px 8px 3px rgba(0, 0, 0, 0.09);
+  border:1px solid #2db15e96
+ 
+}
+
+ 
+#form{
+    padding-top: 11%;
+}
+fieldset.scheduler-border {
+    width:99%;
+    border: 1px solid rgba(19, 18, 18, 0.712) !important;
+    padding: 0 1.4em 1.4em 2.4em !important;
+    margin: 0 0 1.5em 1px !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+#inner{
+    width:104%;
+    color: #000;
+    border: 1px groove rgba(36, 21, 30, 0.486) !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em -33px !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+}
+#gender{
+    position: absolute;
+    left:55%;
+    top:61%;
+    z-index: 8;
+    
+}
+#selectGender{
+    width:509px; background-color: transparent; border-radius: 3px;
+         position:absolute; left:114%;
+        box-shadow:inset 0px 0px 8px 3px rgba(95, 88,88, 0.09);
+        height: 27px;
+        padding-left:8px;
+        border:1px solid #2db15e96;
+ 
+}
+#birthWeight{
+    background-color: transparent; border-radius: 3px;
+    width:509px;
+    height: 27px;
+    position:absolute; left:114%;
+    box-shadow:inset 0px 0px 8px 3px rgba(95, 88,88, 0.09);
+    padding-left:8px;
+    border:1px solid #2db15e96;
+
+}
+.tob{
+    background-color: transparent;
+    border-radius: 3px;
+    outline:none;
+ }
+ #divtob{
+    position: absolute;
+    left:260px;
+ }
+ #check1 , #check2 , #check3{
+    width:20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 4px;
+
+ }
+ .radio{
+     width:20px;
+     height:20px;
+     background-color: transparent;
+ }
+ #remarks{
+     background-color: transparent;
+     position: absolute;
+     left:211px;
+     width:1105px;
+     height:89px;
+     outline: none;
+     padding-left: 13px;
+     z-index:8;
+     box-shadow:inset 0px 0px 8px 3px rgba(0, 0, 0, 0.09);
+     border:1px solid #2db15e96;
+ }
+ #butt{
+     position: fixed;
+     left:40%;
+     top:95%;
+ }
+ .bform{
+     width:150px;
+     background-color: transparent;
+ }
+ #foot{
+    background-color:  rgb(154, 185, 146);
+    width: 100%;
+    height:150px;
+    position: fixed;
+    top:94%;
+    margin-left: -30px;
+    z-index: 10;
+
+ }
+ input[type=time]::-webkit-datetime-edit-ampm-field {
+    display: none;
+  }
+  

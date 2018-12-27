@@ -1,0 +1,48 @@
+img{
+    
+    width: 100%;
+    height:100%;
+    position: fixed ;
+
+   
+}
+#position{
+    position: absolute; left:995px; 
+    bottom: 90px;
+    width:26%;
+    color:black;
+   
+}
+.form-control{
+    width:335px;
+    background-color: transparent;
+   
+    outline: none;
+    border-top: none;
+    border-left:none;
+    border-right:none;
+    padding-left: 10px;
+    color:darkcyan;
+    box-shadow:  -11px 11px 8px -11px #CCC; 
+}
+.icon{
+  background:transparent;
+  color: white;
+  text-align: center;
+}
+.btn-secondary{
+    width:25%;
+    margin-right: 6px;
+    background-color: #144658cc;
+    border: none;
+}
+#marqu{
+
+    width:150px;
+    height: 300px;
+    position: relative;
+    top:168px; left:280px;
+    color:black;
+
+}
+

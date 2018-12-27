@@ -1,0 +1,96 @@
+
+
+
+/*
+#form{
+    padding-top: 4%;
+}
+fieldset.scheduler-border {
+    width:99%;
+    border: 1px solid rgba(19, 18, 18, 0.712) !important;
+    padding: 0 1.4em 1.4em 2.4em !important;
+    margin: 0 0 1.5em 1px !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+#inner{
+    width:104%;
+    color: #000;
+    border: 1px groove rgba(36, 21, 30, 0.486) !important;
+    padding: 0 1.4em 1.4em 1.4em !important;
+    margin: 0 0 1.5em -33px !important;
+    -webkit-box-shadow:  0px 0px 0px 0px #000;
+            box-shadow:  0px 0px 0px 0px #000;
+}
+
+legend.scheduler-border {
+    font-size: 1.2em !important;
+    font-weight: bold !important;
+    text-align: left !important;
+}
+#gender{
+    position: absolute;
+    left:55%;
+    top:52%;
+}
+#selectGender{
+    width:509px; height:33px; background-color: transparent; border-radius: 3px;
+        outline:none; position:absolute; left:114%;
+}
+#birthWeight{
+    background-color: transparent; border-radius: 3px;
+    width:509px;
+    outline:none; position:absolute; left:114%;
+}
+.tob{
+    background-color: transparent;
+    border-radius: 3px;
+    outline:none;
+ }
+ #divtob{
+    position: absolute;
+    left:260px;
+ }
+ #check1 , #check2 , #check3{
+    width:20px;
+    height: 20px;
+    background-color: transparent;
+    border-radius: 4px;
+
+ }
+ .radio{
+     width:20px;
+     height:20px;
+     background-color: transparent;
+ }
+ #remarks{
+     background-color: transparent;
+     position: absolute;
+     left:211px;
+     width:1105px;
+     height:89px;
+     outline: none;
+     padding-left: 13px;
+ }
+ #butt{
+     position: fixed;
+     left:40%;
+     top:95%;
+ }
+ .bform{
+     width:150px;
+     background-color: transparent;
+ }
+ #foot{
+    background-color:bisque;
+    width: 100%;
+    height:150px;
+    position: fixed;
+    top:94%;
+    margin-left: -30px;
+    z-index: 10;
+
+ }
+ input[type=time]::-webkit-datetime-edit-ampm-field {
+    display: none;
+  }*/

@@ -1,0 +1,36 @@
+
+ <!-- <marquee  direction="down" id="marqu">
+    <b>text ccccccccccccccccc</b>
+  </marquee>-->
+<img src="/src/assets/image/webiis.jpg"/>
+<div id="position">
+   <form name="form" (ngSubmit)="f.form.valid && loginUser()" #f="ngForm" novalidate>
+      <h3>Login:</h3>
+      
+    <div class="form-group">
+     
+      <i class="fa fa-user icon"></i>
+      <input type="text" class="form-control"  id="username"  placeholder="Username"
+      [ngClass]="{ 'is-invalid': f.submitted && username.invalid }"
+      name="username"  [(ngModel)]="user.username" #username="ngModel" required />
+      <div *ngIf="f.submitted && !username.valid" class="invalid-feedback">
+        <div *ngIf="username.errors.required">username is required</div>
+      </div>
+    </div>
+    <div class="form-group">
+
+      <i class="fa fa-key icon"></i>
+      <input type="password" class="form-control" id="password" placeholder="Password"
+      [ngClass]="{ 'is-invalid': f.submitted && password.invalid }"
+      name="password" [(ngModel)]="user.password" #password="ngModel" required />
+      <div *ngIf="f.submitted && !password.valid" class="invalid-feedback">
+        <div *ngIf="password.errors.required">password is required</div>
+      </div>
+    </div>
+    <button type="submit"  class="btn btn-secondary">Login</button>
+    <button type="reset"  class="btn btn-secondary">Clear</button>
+   </form>
+  </div>
+  
+
+

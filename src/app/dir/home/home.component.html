@@ -1,0 +1,351 @@
+
+
+<app-navbar></app-navbar>
+<div style="padding-left:30px">
+<div id="form">
+     <div id="head">    
+
+    <button id="bhead" ><b>Birth Registration Details</b></button>
+    </div><!--how lock title when scrolling
+                                         add hide and show button to fieldset-->
+ <form name="form" (ngSubmit)="f.form.valid && createRegistration()" #f="ngForm" novalidate>  
+                                                 
+    <div>
+            <div >
+                <label class="control-label input-label">Birth Registration Id : </label> 
+                <input type="text" [(ngModel)]="child.registrationId" id="regid" name="regid" class="input"  placeholder="<New>" /> 
+                 </div>
+        </div>
+        <div >
+            <div >
+                <label class="control-label input-label" >Registration Date:</label>
+                <input type="date"  [(ngModel)]="child.registrationDate" id="regdate" name="regdate" class="input" placeholder="12/24/2014" />  
+                        </div>
+            </div>
+            <br>
+            <!--child details-->
+            <fieldset class="scheduler-border">
+            <legend class="scheduler-border" style="width:8%">Child Details</legend>
+            <div>
+            <div class="control-group">
+                <div >
+                    <label class="control-label input-label" >Full Name : </label> 
+                    <input type="text"  [(ngModel)]="child.fullName" id="fullname" name="fullName" class="input"  />  
+                </div>
+            </div>
+            <div class="control-group">
+                <div >
+                    <label class="control-label input-label" >HIN :</label>
+                    <input type="text"  [(ngModel)]="child.hin"  id="hin" name="hin" class="input" />  
+                </div>
+            </div>
+            </div>
+            <br>
+            <br>
+            <!--birth details-->
+            <fieldset  id="inner">
+                <legend class="scheduler-border"style="width:8%">Birth Details</legend>
+                <div class="control-group">
+                    <div >
+                        <label class="control-label input-label" >Date Of Birth : </label> 
+                        <input type="date"  [(ngModel)]="child.dateOfBirth" id="dateOfBirth" name="dateOfBirth" class="input2" />  
+                    </div>
+                </div>
+                <div class="control-group">
+                        <label class="control-label input-label" >Time of Birth :</label>
+                        <input type=" time "  step="1" [(ngModel)]="child.timeOfBirth" id="timeofbirth" name="timeOfBirth"
+                        class="input2">
+                </div>
+        
+         <!--   <div class="control-group">
+              <div name="timeofbirth">
+                  <label class="control-label input-label" >Time of Birth :</label>
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;    
+                  <select class="tob"  >
+                      <option *ngFor="let x1 of n1">{{x1}}</option>
+                  </select>
+                  :
+                  <select class="tob" >
+                      <option *ngFor="let x2  of n2">{{x2}}</option>
+                  </select>
+                  :
+                  <select class="tob">
+                      <option *ngFor="let x2 of n2">{{x2}}</option>
+                  </select>
+                  &nbsp;
+                  <select class="tob">
+                      <option *ngFor="let t of ap">{{t}}</option>
+                  </select>
+              </div> 
+            
+            </div>-->
+
+            <div class="control-group" id="gender">
+            <label class="control-label input-label" >Gender :</label>
+            <select id="selectGender" [(ngModel)]="child.gender" name="gender">
+                <option *ngFor="let g of gender" >{{g}}</option>
+            </select>
+            <br>
+            <label class="control-label input-label" >Weight :</label>
+            <input type="number" [(ngModel)]="child.birthWeight" id="birthWeight" name="birthWeight" placeholder="(in grams)"/>
+            </div>
+            </fieldset>
+            <fieldset  id="inner">
+        <!--vaccination details-->       
+                <legend class="scheduler-border" style="width:11%">Vaccinaton Details</legend>
+                <div class="control-group">
+                    <div >
+                        <label class="control-label input-label" >Vaccination Profile : </label> 
+                        <input type="text"  id="vaccineProfile" name="vaccineProfile" class="input"  />  
+                    </div>
+                </div>
+            </fieldset>
+ <!-- birth location details-->     
+         <fieldset  id="inner">
+                <legend class="scheduler-border" style="width:13%">Birth Location Details</legend>
+                <div class="control-group">
+                    <div>
+                        <label class="control-label input-label" >Place Of Birth : </label> 
+                        <input type="text"  [(ngModel)]="child.placeOfBirth" id="placeOfBirth" name="placeOfBirth" class="input"/>  
+                    </div>
+                </div>
+                </fieldset>
+    <!--current location-->            
+                <fieldset  id="inner">
+                        <legend class="scheduler-border" style="width:10%">Current Location</legend>
+                        <div class="control-group">
+                            <div >
+                                <label class="control-label input-label" >RDHS Area : </label> 
+                               <!-- <input type="text"  id="rdhs" name="rdhs"  class="input"/> -->
+                               <select class="input" id="rdhsarea" [(ngModel)]="area.rdhs" (change)="selectOption_1($event.target.value)" name="name"> 
+                                <option [ngValue]="rdhsa.name" *ngFor="let rdhsa of rdhs" >{{rdhsa.name}}</option>
+                            </select>  
+                            </div>
+                        </div>
+                
+                        <div class="control-group">
+                            <div >
+                                <label class="control-label input-label" >DS Area : </label> 
+                               <!-- <input type="text"  id="rdhs" name="rdhs"  class="input"/> -->
+                               <select class="input"  id="dsarea" [(ngModel)]="area.ds" (change)="selectOption_2($event.target.value)" name="name">
+                                <option [ngValue]="dsa.name" *ngFor="let dsa of ds" >{{dsa.name}}</option>
+                            </select>  
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div >
+                                <label class="control-label input-label" >MOH Area : </label> 
+                               <!-- <input type="text"  id="moh" name="moh"  class="input"/>-->
+                               <select class="input" id="moharea" [(ngModel)]="area.moh" (change)="selectOption_3($event.target.value)" name="name">
+                                <option [ngValue]="moha.name" *ngFor="let moha of moh" >{{moha.name}}</option>
+                            </select>   
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div >
+                                <label class="control-label input-label" >PHM Area : </label> 
+                                <!--<input type="text"  id="phm" name="phm"  class="input"/>-->
+                                <select class="input" id="phmarea" [(ngModel)]="area.phm" (change)="selectOption_4($event.target.value)" name="name">
+                                    <option [ngValue]="phma.name" *ngFor="let phma of phm" >{{phma.name}}</option>
+                                </select>   
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div >
+                                <label class="control-label input-label" >GN Division : </label> 
+                               <!-- <input type="text"  id="gn" name="gn"  class="input"/>  -->
+                               <select class="input" id="gnarea" [(ngModel)]="area.gn" name="gnname">
+                                <option  *ngFor="let gna of gn" >{{gna.name}}</option>
+                            </select> 
+                            </div>
+                        </div>
+                       
+                    </fieldset>
+  <!--current address-->           
+              <fieldset  id="inner">
+                    <legend class="scheduler-border" style="width:10%">Current Address</legend>
+                    <div class="control-group">
+                        <div >
+                            <label class="control-label input-label" >Address Line 1: </label> 
+                            <input type="text"  id="addresslineone" [(ngModel)]="address.addressLineOne" name="addresone"  class="input"/>  
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div >
+                            <label class="control-label input-label" >Address Line 2: </label> 
+                            <input type="text"  id="addresslinetwo" [(ngModel)]="address.addressLineTwo" name="addresstwo"  class="input"/>  
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div >
+                            <label class="control-label input-label" >Address Line 3: </label> 
+                            <input type="text"  id="addresslinethree" [(ngModel)]="addressLineThree" name="addressthree"  class="input"/>  
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div >
+                            <label class="control-label input-label" >Postal Code: </label> 
+                            <input type="text"  id="postal" [(ngModel)]="address.postalCode" name="postalcode"  class="input"/>  
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div>
+                            <label class="control-label input-label" >Address Type: </label> 
+                            <select class="input" [(ngModel)]="address.addressType" name="type">
+                                <option *ngFor="let ad of addresstype" >{{ad}}</option>
+                            </select>
+                        </div>
+                    </div>   
+                  </fieldset>
+   <!--parent details-->               
+          <fieldset  id="inner">
+                    <legend class="scheduler-border" style="width:10%">Parent Details</legend>
+                    <div class="control-group">
+                        <div >
+                            <label class="control-label input-label" >Mother Maiden Name: </label> 
+                            <input type="text"  id="mothername" [(ngModel)]="parent.motherMaidenName" name="mothername"  class="input"/>  
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div >
+                            <label class="control-label input-label" >Mother's NIC : </label> 
+                            <input type="text"  id="mnic"[(ngModel)]="parent.nic" name="mnic"  class="input"/>  
+                        </div>
+                     </div>
+                     <div class="control-group">
+                        <div >
+                            <label class="control-label input-label" >Mothers Reg.No: </label> 
+                            <input type="text"  id="mregno"[(ngModel)]="parent.registrationNo" name="mregno"  class="input"/>  
+                        </div>
+                     </div>
+                     <div class="control-group">
+                        <div>
+                              <label class="control-label input-label" >Father Name: </label> 
+                              <input type="text"  id="farthername"[(ngModel)]="parent.fatherName" name="farthername"  class="input"/>  
+                        </div>
+                     </div>
+                     <div class="control-group">
+                         <div>
+                              <label class="control-label input-label" >Father's NIC: </label> 
+                              <input type="text"  id="farthernic" [(ngModel)]="parent.fatherNic" name="farthernic"  class="input"/>  
+                        </div>
+                      </div>
+                      <div class="control-group">
+                          <div >
+                              <label class="control-label input-label" >Contact No: </label> 
+                              <input type="text"  id="contact" [(ngModel)]="parent.contactNo" name="contact"  class="input"/>  
+                          </div>
+                      </div>
+                      <br>
+                        <div class="control-group">
+                        <label>
+                            <input type="checkbox" id="check1" [(ngModel)]="parent.multipleBirth" name="multiplebirth">&nbsp;&nbsp;Multiple Births
+                        </label>
+                        <br>
+                        <label>
+                                <input type="checkbox" id="check2" [(ngModel)]="parent.crs" name="CRS">&nbsp;&nbsp;Protection Status against Congenital Rubbella
+                                Syndrome(CRS)
+                        </label>
+                        <br>
+                        <label>
+                                <input type="checkbox" id="check3" [(ngModel)]="parent.nnt" name="NNT">&nbsp;&nbsp;Protection Status against Neonatal Tetanus(NNT)
+                        </label>
+                        </div>
+           </fieldset> 
+<!-- guradian details-->
+                <fieldset  id="inner">
+                    <legend class="scheduler-border" style="width:10%">Guradian Details</legend>
+                    <div class="control-group">
+                        <div >
+                            <label class="control-label input-label" >Guardian Name: </label> 
+                            <input type="text"  id="guardianname" [(ngModel)]="guardian.name" name="guardianname"  class="input"/>  
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div >
+                            <label class="control-label input-label" >Guardian NIC: </label> 
+                            <input type="text"  id="guardiannic" [(ngModel)]="guardian.nic" name="guardiannic"  class="input"/>  
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div >
+                            <label class="control-label input-label" >Contact No: </label> 
+                            <input type="text"  id="guardiantelephone"[(ngModel)]="guardian.telephone" name="guardiantelephone"  class="input"/>  
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div >
+                            <label class="control-label input-label" >Address: </label> 
+                            <input type="text"  id="guradianaddress" [(ngModel)]="guardian.address" name="guradianaddress"  class="input"/>  
+                        </div>
+                    </div>
+            </fieldset>
+<!-- Additional details-->
+            <fieldset  id="inner">
+    
+                        <legend class="scheduler-border" style="width:14%">Additional information</legend>
+                        <div class="control-group">
+                            <div >
+                                <label class="control-label input-label" >Mother BHT No: </label> 
+                                <input type="text"  id="bhtno" name="bhtno" [(ngModel)]="parent.additional.motherBhtNo" class="input"/>  
+                            </div>
+                        </div>
+                        <div class="control-group">
+                            <div >
+                                <label class="control-label input-label" >Ward: </label> 
+                                <input type="text"  id="ward" name="ward" [(ngModel)]="parent.additional.ward" class="input"/>  
+                            </div>
+                         </div>
+                         <div class="control-group">
+                            <div >
+                                <label class="control-label input-label" >Birth Certificate No: </label> 
+                                <input type="text"  id="birthcertino" name="birthCertificate" [(ngModel)]="parent.additional.birthCertificateNo"  class="input"/>  
+                            </div>
+                         </div>
+                       
+                         
+                         <div class="control-group">
+                            <div style="padding-top: 6px;">
+                                  <label class="control-label input-label" >Details Of Delivary: </label> 
+                                  <select class="input" [(ngModel)]="parent.additional.detailsOfdelivary" name="detailsofdelivary">
+                                        <option *ngFor="let detail of delivary" >{{detail}}</option>
+                                    </select>
+                            </div>
+                         </div>
+                        
+                         <div class="control-group">
+                             <div >
+                                  <label class="control-label input-label" >Complication In Delivary: </label>&nbsp;&nbsp;
+                                  <input type="radio" class="radio" [(ngModel)]="parent.additional.complicationOfDelivary" name="delivary" value="No Complication">&nbsp;&nbsp;No Complication&nbsp;&nbsp;
+                                  <input type="radio" class="radio" [(ngModel)]="parent.additional.complicationOfDelivary" name="delivary" vlaue="Complication">&nbsp;&nbsp;Complication
+                             </div>
+                          </div>
+                          <div class="control-group">
+                                <label class="control-label input-label">Remarks:</label>
+                                <textarea  id="remarks" [(ngModel)]="parent.additional.remarks" name="remarks"></textarea> 
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                     
+                           <div class="control-group">
+                                <div>
+                                    <label class="control-label input-label" >Infant Status: </label> 
+                                    <select class="input" [(ngModel)]="parent.additional.intantstatus" name="intantstatus">
+                                        <option *ngFor="let s of status" >{{s}}</option>
+                                    </select>
+                                </div>
+                            </div>      
+                </fieldset>                    
+        </fieldset>
+    
+        <div id="foot">
+        <div id="butt">
+            <button type="submit" class="bform"  >save</button>&nbsp;&nbsp;
+            <button type="reset"  class="bform">reset</button>&nbsp;&nbsp;   
+        </div>
+        </div>
+    </form>
+        </div>
+        </div>
+    

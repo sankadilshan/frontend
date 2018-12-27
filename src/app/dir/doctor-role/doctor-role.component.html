@@ -1,0 +1,397 @@
+
+
+<app-navbar></app-navbar>
+<div style="padding-left:30px">
+<div id="form">
+     <div id="head">    
+
+    <button id="bhead" ><b>Birth Registration Details</b></button>
+    </div><!--how lock title when scrolling
+                                       add hide and show button to fieldset-->                                                 
+    
+            <div >
+                <label class="control-label input-label">Birth Registration Id : </label> 
+                <select class="input" id="registrationid"  (change)="getByRegistrationId($event.target.value)" name="registrationid">
+                        <option [ngValue]="c.registrationId" *ngFor="let c of childdetails" >{{c.registrationId}}</option>
+                    </select>   
+                </div>
+        <div >
+            <table ><tr>
+                <td><label class="control-label input-label" >Registration Date:</label></td>
+                <td class="input" >{{child.registrationDate}}</td>  
+            </tr>
+            </table>
+        </div>
+            <br>
+            <!--child details-->
+            <fieldset class="scheduler-border">
+            <legend class="scheduler-border" style="width:8%">Child Details</legend>
+            <div>
+            <div class="control-group">
+                <table ><tr>
+                    <td><label class="control-label input-label" >Full Name : </label></td> 
+                    <td class="input" >{{child.fullName}}</td> 
+                 </tr>
+                </table>
+            </div>
+            <div class="control-group">
+                <table><tr>
+                    <td><label class="control-label input-label" >HIN :</label></td>
+                    <td class="input" >{{child.hin}}</td>
+                    </tr>  
+                </table>
+            </div>
+            </div>
+            <br>
+            <br>
+            <!--birth details-->
+            <fieldset  id="inner">
+                <legend class="scheduler-border"style="width:8%">Birth Details</legend>
+                <div class="control-group">
+                    <table>
+                        <tr><td><label class="control-label input-label" >Date Of Birth : </label> </td>
+                        <td class="input2" >{{child.dateOfBirth}}</td>
+                        </tr>    
+                    </table>
+                </div>
+                <div class="control-group">
+                    <table><tr>
+                       <td><label class="control-label input-label" >Time of Birth :</label></td> 
+                        <td class="input2">{{child.timeOfBirth}}</td>
+                    </tr>
+                </table>
+                </div>
+        
+         <!--   <div class="control-group">
+              <div name="timeofbirth">
+                  <label class="control-label input-label" >Time of Birth :</label>
+                  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;    
+                  <select class="tob"  >
+                      <option *ngFor="let x1 of n1">{{x1}}</option>
+                  </select>
+                  :
+                  <select class="tob" >
+                      <option *ngFor="let x2  of n2">{{x2}}</option>
+                  </select>
+                  :
+                  <select class="tob">
+                      <option *ngFor="let x2 of n2">{{x2}}</option>
+                  </select>
+                  &nbsp;
+                  <select class="tob">
+                      <option *ngFor="let t of ap">{{t}}</option>
+                  </select>
+              </div> 
+            
+            </div>-->
+
+            <div class="control-group" id="gender">
+                <div class="control-group">
+                <table><tr>
+                     <td><label class="control-label input-label" >Gender :</label></td>
+                        <td id="selectGender">{{child.gender}}</td>
+                    </tr>
+                    </table>
+            </div>
+            <div class="control-group">
+            <table>
+                <tr>
+                <td > <label class="control-label input-label" >Weight :</label></td>
+                <td id="birthWeight">{{child.birthWeight}}</td>
+                </tr>
+            </table>
+           </div>
+            </div>
+            </fieldset>
+            <fieldset  id="inner">
+        <!--vaccination details-->       
+                <legend class="scheduler-border" style="width:11%">Vaccinaton Details</legend>
+                <div class="control-group">
+                    <table >
+                        <tr>
+                       <td><label class="control-label input-label" >Vaccination Profile : </label> </td>
+                        <td class="input">vaccine profile</td>
+                        </tr>
+                    </table>  
+                </div>
+            </fieldset>
+ <!-- birth location details-->     
+         <fieldset  id="inner">
+                <legend class="scheduler-border" style="width:13%">Birth Location Details</legend>
+                <div class="control-group">
+                    <table>
+                        <tr>
+                       <td> <label class="control-label input-label" >Place Of Birth : </label> </td>
+                        <td class="input"></td>
+                        </tr>
+                       </table>
+                </div>
+                </fieldset>
+    <!--current location-->            
+                <fieldset  id="inner">
+                        <legend class="scheduler-border" style="width:10%">Current Location</legend>
+                        <div class="control-group">
+                            <table >
+                                <tr>
+                               <td><label class="control-label input-label" >RDHS Area : </label></td> 
+                               <!-- <input type="text"  id="rdhs" name="rdhs"  class="input"/> -->
+                              <td class="input"></td>
+                              </tr>
+                            </table>
+                        </div>
+                
+                        <div class="control-group">
+                                <table >
+                                        <tr>
+                                       <td><label class="control-label input-label" >DS Area : </label></td> 
+                                       <!-- <input type="text"  id="rdhs" name="rdhs"  class="input"/> -->
+                                      <td class="input">{{child.area.ds}}</td>
+                                      </tr>
+                                    </table>
+                        </div>
+                        <div class="control-group">
+                                <table >
+                                        <tr>
+                                       <td><label class="control-label input-label" >MOH Area : </label></td> 
+                                       <!-- <input type="text"  id="rdhs" name="rdhs"  class="input"/> -->
+                                      <td class="input">{{child.area.moh}}</td>
+                                      </tr>
+                                    </table>
+                        </div>
+                        <div class="control-group">
+                                <table >
+                                        <tr>
+                                       <td><label class="control-label input-label" >PHM Area : </label></td> 
+                                       <!-- <input type="text"  id="rdhs" name="rdhs"  class="input"/> -->
+                                      <td class="input">{{child.area.phm}}</td>
+                                      </tr>
+                                    </table>
+                        </div>
+                        <div class="control-group">
+                                <table >
+                                        <tr>
+                                       <td><label class="control-label input-label" >GN Area : </label></td> 
+                                       <!-- <input type="text"  id="rdhs" name="rdhs"  class="input"/> -->
+                                      <td class="input">{{child.area.gn}}</td>
+                                      </tr>
+                                    </table>
+                        </div>
+                       
+                    </fieldset>
+  <!--current address-->           
+              <fieldset  id="inner">
+                    <legend class="scheduler-border" style="width:10%">Current Address</legend>
+                    <div class="control-group">
+                        <table><tr>
+                            <td>   <label class="control-label input-label" >Address Line 1: </label></td>
+                            <td class="input">{{child.address.addressLineOne}}</td>  
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="control-group">
+                        <table><tr>
+                            <td><label class="control-label input-label" >Address Line 2: </label></td> 
+                            <td  class="input">{{child.address.addressLineTwo}}</td>
+                        </tr>                    
+                        </table>
+                    </div>
+                    <div class="control-group">
+                        <table ><tr>
+                            <td><label class="control-label input-label" >Address Line 3: </label></td> 
+                            <td  class="input">{{child.address.addressLineThree}}</td>
+                            </tr>  
+                        </table>
+                    </div>
+                    <div class="control-group">
+                            <table ><tr>
+                                    <td><label class="control-label input-label" >Postal Code: </label></td> 
+                                    <td  class="input">{{child.address.postalCode}}</td>
+                                    </tr>  
+                                </table>
+                    </div>
+                    <div class="control-group">
+                            <table ><tr>
+                                    <td><label class="control-label input-label" >Address Type: </label></td> 
+                                    <td  class="input">{{child.address.addressType}}</td>
+                                    </tr>  
+                                </table>
+                    </div>   
+                  </fieldset>
+   <!--parent details-->               
+         <fieldset  id="inner">
+                    <legend class="scheduler-border" style="width:10%">Parent Details</legend>
+                    <div class="control-group">
+                        <table>
+                            <tr>
+                                <td><label class="control-label input-label" >Mother Maiden Name: </label></td> 
+                                <td class="input">{{child.parent.motherMaidenName}}</td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div class="control-group">
+                            <table>
+                                <tr>
+                                    <td><label class="control-label input-label" >Mother's NIC: </label></td> 
+                                    <td class="input">{{child.parent.nic}}</td>
+                                    </tr>
+                            </table>
+                     </div>
+                     <div class="control-group">
+                            <table>
+                                    <tr>
+                                        <td><label class="control-label input-label" >Mother Reg.NO: </label></td> 
+                                        <td class="input">{{child.parent.registrationNo}}</td>
+                                        </tr>
+                                </table>
+                     </div>
+                     <div class="control-group">
+                            <table>
+                                    <tr>
+                                        <td><label class="control-label input-label" >Father Name: </label></td> 
+                                        <td class="input">{{child.parent.fullName}}</td>
+                                        </tr>
+                                </table>
+                     </div>
+                     <div class="control-group">
+                            <table>
+                                    <tr>
+                                        <td><label class="control-label input-label" >Father's NIC: </label></td> 
+                                        <td class="input">{{child.parent.fatherNic}}</td>
+                                        </tr>
+                            </table>
+                      </div>
+                      <div class="control-group">
+                           <table>
+                                <tr>
+                                    <td><label class="control-label input-label" >Contact No: </label></td> 
+                                    <td class="input">{{child.parent.contactNo}}</td>
+                                    </tr>
+                            </table>
+                      </div>
+                      <br>
+                        <div class="control-group">
+                        <table>
+                            <tr>
+                            <td><label>  <input type="checkbox" [disabled]="true" id="check1" [checked]="">&nbsp;&nbsp;Multiple Births
+                        </label></td>
+                        </tr>
+                        <tr>
+                           <td><label> <input type="checkbox" id="check2" [checked]="">&nbsp;&nbsp;Protection Status against Congenital Rubbella
+                                Syndrome(CRS)
+                        </label></td>
+                        </tr>
+                        <tr>
+                           <td><label> <input type="checkbox" id="check3" [checked]="">&nbsp;&nbsp;Protection Status against Neonatal Tetanus(NNT)
+                        </label></td>
+                        </tr>
+                        </table>
+                        </div>
+           </fieldset> 
+<!-- guradian details-->
+            <fieldset  id="inner">
+                    <legend class="scheduler-border" style="width:10%">Guradian Details</legend>
+                    <div class="control-group">
+                            <table>
+                                    <tr>
+                                        <td><label class="control-label input-label" >Guardian Name: </label></td> 
+                                        <td class="input"></td>
+                                        </tr>
+                            </table>
+                    </div>
+                    <div class="control-group">
+                            <table>
+                                    <tr>
+                                        <td><label class="control-label input-label" >Guardian NIC: </label></td> 
+                                        <td class="input"></td>
+                                        </tr>
+                            </table>
+                    </div>
+                    <div class="control-group">
+                            <table>
+                                    <tr>
+                                        <td><label class="control-label input-label" >Contact No: </label></td> 
+                                        <td class="input"></td>
+                                        </tr>
+                            </table>
+                    </div>
+                    <div class="control-group">
+                            <table>
+                                    <tr>
+                                        <td><label class="control-label input-label" >Address: </label></td> 
+                                        <td class="input"></td>
+                                        </tr>
+                            </table>
+                    </div>
+            </fieldset>
+<!-- Additional details-->
+          <fieldset  id="inner">
+    
+                        <legend class="scheduler-border" style="width:14%">Additional information</legend>
+                        <div class="control-group">
+                                <table>
+                                        <tr>
+                                            <td><label class="control-label input-label" >Mother BHT No: </label></td> 
+                                            <td class="input"></td>
+                                     </tr>
+                                </table>
+                        </div>
+                        <div class="control-group">
+                                <table>
+                                        <tr>
+                                            <td><label class="control-label input-label" >Ward: </label></td> 
+                                            <td class="input"></td>
+                                         </tr>
+                                </table>
+                         </div>
+                         <div class="control-group">
+                                <table>
+                                        <tr>
+                                            <td><label class="control-label input-label" >Birth Certificate No: </label></td> 
+                                            <td class="input"></td>
+                                         </tr>
+                                </table>
+                         </div>
+                       
+                         
+                         <div class="control-group">
+                                 <table>
+                                     <tr>
+                                         <td><label class="control-label input-label" >Details Of Delivary: </label> </td>
+                                         <td class="input"></td>
+                                     </tr> 
+                            </table>
+                         </div>
+                        
+                         <div class="control-group">
+                                <div >
+                                        <label class="control-label input-label" >Complication In Delivary: </label>&nbsp;&nbsp;
+                                        <input type="radio" class="radio"  name="delivary" value="No Complication">&nbsp;&nbsp;No Complication&nbsp;&nbsp;
+                                        <input type="radio" class="radio"  name="delivary" vlaue="Complication">&nbsp;&nbsp;Complication
+                                   </div>
+                          </div>
+                          <div class="control-group">
+                                <table>
+                                        <tr>
+                                            <td><label class="control-label input-label" >Remarks: </label> </td>
+                                            <td id="remarks"></td>
+                                        </tr> 
+                               </table>
+                         </div>
+                            <br>
+                            <br>
+                            <br>
+                     
+                           <div class="control-group">
+                                <table>
+                                        <tr>
+                                            <td><label class="control-label input-label" >Infant Status: </label> </td>
+                                            <td class="input"></td>
+                                        </tr> 
+                               </table>
+                            </div>      
+                </fieldset>               
+        </fieldset>
+        </div>
+        </div>
+    
+
